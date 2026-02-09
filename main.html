@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>for you</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Inter:wght@400;500&display=swap');
+
+    body {
+    	font-family: 'Inter', system-ui, sans-serif;
+    	background: linear-gradient(135deg, #fcfadd, #f3efd0);
+    	color: #371f00;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	height: 100vh;
+    	text-align: center;
+    	margin: 0;
+    }
+
+    .card {
+  	background: rgba(255,255,255,0.55);
+  	backdrop-filter: blur(10px);
+  	border-radius: 24px;
+  	padding: 56px 44px;
+  	max-width: 720px;
+  	margin: auto;
+  	box-shadow: 0 25px 60px rgba(55, 31, 0, 0.15);
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 16px;
+      cursor: pointer;
+      font-family: 'Playfair Display', serif;
+    }
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 18px;
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 16px;
+      font-family: 'Inter', sans-serif;
+    }
+    button {
+      margin: 10px;
+      padding: 14px 26px;
+      border-radius: 999px;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: all .2s ease;
+      font-family: 'Inter', sans-serif;
+    }
+  .yes {
+    background: #371f00;
+    color: #fcfadd;
+    box-shadow: 0 8px 20px rgba(55, 31, 0, 0.25);
+  }
+
+  .yes:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(55, 31, 0, 0.35);
+  }
+
+  .talk {
+    background: transparent;
+    color: #371f00;
+    border: 1px solid rgba(55, 31, 0, 0.4);
+  }
+
+  .talk:hover {
+    background: rgba(55, 31, 0, 0.08);
+  }
+
+  .note {
+    margin-top: 22px;
+    font-size: 14px;
+    opacity: 0.7;
+  }
+
+  .secret {
+    margin-top: 16px;
+    font-size: 14px;
+    color: #6b3f00;
+    display: none;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <h1>Some feelings don’t need rushing, but they don’t deserve silence either.</h1>
+
+    <p>
+      	What I feel for you is clear enough to be named. 
+	I like you, not because of a moment, but because being with you makes me want to stay.
+	This is me stepping forward, properly and sincerely.
+    </p>
+
+    <h2  onclick="tapTitle()"><strong>I’d like this to be official.</strong></h2>
+
+    <button class="yes" onclick="window.location.href='secret.html'">Yes, with you</button>
+    <button onclick="window.location.href='talk.html'">Tell me what you feel</button>
+	
+    <div class="secret" id="secret">I meant every word.</div>
+
+  </div>
+
+  <script>
+    
+    let tapCount = 0;
+
+    function tapTitle() {
+      tapCount++;
+      if (tapCount === 3) {
+        document.getElementById("secret").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

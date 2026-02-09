@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>a note for you</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+    	font-family: 'Inter', system-ui, sans-serif;
+    	background: linear-gradient(135deg, #fcfadd, #f3efd0);
+    	color: #371f00;
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+    	height: 100vh;
+    	margin: 0;
+    }
+
+    .note {
+      background: #fff7cc;
+      width: 420px;
+      height: 320px;
+      padding: 20px;
+      border-radius: 9px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      position: relative;
+    }
+
+    /* fake paper lines */
+    .note::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 22px,
+        rgba(0,0,0,0.05) 23px
+      );
+      pointer-events: none;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      font-weight: 600;
+color: #b55b24;
+    }
+
+    textarea {
+      width: 100%;
+      height: 140px;
+      border: none;
+      background: transparent;
+      resize: none;
+      font-size: 14px;
+      line-height: 23px;
+      outline: none;
+      position: relative;
+      z-index: 1;
+color: #475569;
+    }
+
+    button {
+      margin-top: 95px;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #b55b24;
+      color: #ffffff;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .thanks {
+      margin-top: 14px;
+      font-size: 13px;
+      text-align: center;
+      color: #475569;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="note">
+    <h3>Write me something.</h3>
+
+    <textarea
+      id="msg"
+      placeholder="Anything you want to say…"
+    ></textarea>
+
+    <button onclick="send()">Send</button>
+
+    <div class="thanks" id="thanks">
+      Thanks for trusting me with this.
+    </div>
+  </div>
+
+  <script>
+    function send() {
+      const text = document.getElementById("msg").value;
+
+      if (text.trim() === "") return;
+
+      document.getElementById("thanks").style.display = "block";
+
+      setTimeout(() => {
+        window.location.href =
+          "mailto:trantruc298@gmail.com?subject=A note from you&body=" +
+          encodeURIComponent(text);
+      }, 900);
+    }
+  </script>
+</body>
+</html>
