@@ -1,20 +1,33 @@
-@media (max-width: 480px) {
+@media (max-width: 430px) {
 
   body {
-    padding: 24px;
+  min-height: 100svh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;   
   }
 
   h1 {
-    font-size: 26px;
+  font-size: 26px;
+  letter-spacing: .4px;
+  margin: 0;
   }
 
   .line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
   background: transparent;
   padding: 0;
   border-radius: 0;
   }
 
   .text-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 420px; 
     height: 90px;
   }
 
@@ -25,7 +38,12 @@
 
   .random-sticker {
     width: 60px;
-    opacity: 0.75;
+    opacity: 0.8;
   }
+}
+@media (min-width: 768px) {
+  h1 { font-size: 32px; }
+  .sticker-main { width: 200px; }
+  .random-sticker { width: 80px; }
 }
 
