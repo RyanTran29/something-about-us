@@ -9,10 +9,9 @@
   }
 
   .line {
-    font-size: 15px;
-    background: rgba(252, 250, 221, 0.85);
-    padding: 6px 10px;
-    border-radius: 12px;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
   }
 
   .text-wrap {
@@ -29,3 +28,4 @@
     opacity: 0.75;
   }
 }
+
